@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>О себе</title>
+</head>
+<body>
+    <header class="top_panel">
+        <div class="distances_top_panel">
+            <img class="logo" src="img/logo.jpg" alt="logo">
+            <form>
+                <button class="white_button">Выйти из аккаута</button>
+            </form>
+        </div>
+    </header>
+    <main class="creating_profile">
+        <form>
+            <button class="white_button">На главную</button>
+        </form>
+        <div class="cr_and_about_myself">
+            <h1 class="cr_text">Создание профиля</h1>
+            <p class="about_myself_text">/ О себе</p>
+        </div>
+        <div class="line_in_cr_and_about_myself">
+       </div>
+        <div class="left_and_right_panels">
+            <div class="anketa">
+                <div class="dowload_form">
+                    <p class="avatar"><b>Аватар профиля</b></p>
+                    <form>
+                        <label class="violet_button" for="photo">Загрузить</label>
+                        <input name="photo" id="photo" type="file" style="display:none;" accept=".jpg, .jpeg, .png">
+                    </form>
+                    <p class="text_dowload_grey">Загрузите фотографию весом не более 10 мб</p>
+                </div>
+                <form>
+                    <input class="data_windows_anketa" name="name" id="name" type="text" placeholder="Имя и фамилия"> 
+                </form>
+                <form class="variants">
+                    <input type="radio" name="gender" id="m" value="male">
+                    <label for="m" class="variant">Парень</label>
+                    <input type="radio" name="gender" id="f" value="female">
+                    <label for="f" class="variant">Девушка</label>
+                </form>
+                <form>
+                    <input class="date" type="text" placeholder="Дата рождения" id="date"
+                    onfocus="(this.type='date')"
+                    onblur="(this.type='text')">
+                </form>
+                <form>
+                    <input class="data_windows_anketa" type="text" name="tg" placeholder="Телеграм">
+                </form>
+                <form>
+                    <input class="data_windows_anketa" type="tel" name="tel" placeholder="Телефон">
+                </form>
+                <div>
+                    <form>
+                        <textarea class="about_myself_block" name="textarea" id="textarea" cols="15" rows="5" placeholder="О себе"></textarea>
+                    </form>
+                    <p class="example">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хороры и смотреть аниме. Открыт к общению и взаимопомощи :)</p>
+                </div> 
+            </div> 
+            <div class="right">
+                <p class="in_the_future_text">Так будет выглядеть твоя будущая страница</p>
+                <div class="future_anketa_big">
+                    <div class="place_for_photo_and_batton_show_contacts">
+                        <div class="place_for_photo"></div>
+                        <form>
+                            <button class="show_contacts">Показать контакты</button>
+                        </form>
+                    </div>
+                    <div  class="future_anketa_right">
+                        <p class="name_surname_in_future_anketa">Имя Фамилия</p>
+                        <div class="gender_age_grey_block_in_future_anketa">
+                            <p>пол</p>
+                            <p>возраст</p>
+                            <p class="small_grey_block_in_future"></p>
+                        </div>
+                        <p class="medium_grey_block_in_future"></p>
+                        <div class="turn_about_myself_in_future">
+                            <p class="about_myself_in_future">О себе</p>
+                            <button class="turn">Развернуть</button>
+                        </div>
+                        <p class="big_grey_block_in_future">
+                        <!-- тут нужно прописать маленькие серые прямоугольники внутри большого -->
+                        </p>
+                    </div>
+                </div>
+                <div class="we_dont_know">
+                    <div>
+                      <p><b>Мы совсем ничего про тебя не знаем</b></p> 
+                      <p class="tell_about_yourself">Расскажи о себе</p> 
+                      <p class="tell_about_yourself">Люди пишут тем, кому доверяют. Тем более при поиске соседа.</p>  
+                    </div>
+                    <div>
+                        <img class="bad_smile" src="img/(smile.jpg" alt="bad_smile">
+                    </div>
+                </div>  
+                <div class="continue_button_with_location">
+                    <div class="for_continue_button"></div>
+                    <button class="continue_button">Продолжить</button>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+    <footer class="footer">
+        <div class="email_and_support">
+            <p class="email">Support@homeet.com</p>
+            <p class="support">Техническая поддержка</p>
+        </div>
+        <div class="services_and_networks">
+            <div class="services">
+                <p>О сервисе</p>
+                <p>Контакты</p>
+                <p>Политика конфиденциальности</p>
+            </div>
+            <div class="networks">
+                <img class="networks_pict" src="img/tg.jpg" alt="telegram">
+                <img class="networks_pict" src="img/vk.jpg" alt="vk">
+            </div>
+        </div> 
+        <div class="down">
+            <hr>
+            <div class="down_text">
+                <p>Предложение не является публичной офертой. <br> Сервис не несет ответственность за действия пользователей, достоверность информации и т.д.</p>
+                <p>Сделано в <b>бвср</b></p>
+            </div>  
+        </div>
+    </footer>
+</body>
+</html>
