@@ -31,33 +31,34 @@
                     <p class="avatar"><b>Аватар профиля</b></p>
                     <form>
                         <label class="violet_button" for="photo">Загрузить</label>
-                        <input name="photo" id="photo" type="file" style="display:none;" accept=".jpg, .jpeg, .png">
+                        <input name="photo" id="photo" type="file" style="display:none;" accept=".jpg, .jpeg, .png" onchange="perenosFoto()">
                     </form>
                     <p class="text_dowload_grey">Загрузите фотографию весом не более 10 мб</p>
                 </div>
                 <form>
-                    <input class="data_windows_anketa" name="name" id="name" type="text" placeholder="Имя и фамилия"> 
+                    <input class="data_windows_anketa" name="name" id="name" type="text" placeholder="Имя и фамилия" onchange='perenosImeni(this.value)'>
+                    <p class="error" id="name_format">Неверный формат имени</p>
                 </form>
                 <form class="variants">
-                    <input type="radio" name="gender" id="m" value="male">
+                    <input type="radio" name="gender" id="m" value="male" onchange='perenosGender1(this.value)'>
                     <label for="m" class="variant">Парень</label>
-                    <input type="radio" name="gender" id="f" value="female">
+                    <input type="radio" name="gender" id="f" value="female" onchange='perenosGender2(this.value)'>
                     <label for="f" class="variant">Девушка</label>
                 </form>
                 <form>
-                    <input class="date" type="text" placeholder="Дата рождения" id="date"
-                    onfocus="(this.type='date')"
-                    onblur="(this.type='text')">
+                    <input class="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" id="date" type="text" placeholder="Дата рождения" onfocus="(this.type='date')"  onchange='perenosDate(this.value)'>
                 </form>
                 <form>
-                    <input class="data_windows_anketa" type="text" name="tg" placeholder="Телеграм">
+                    <input class="data_windows_anketa" type="text" name="tg" id="tg" placeholder="Телеграм" onchange='perenosTG(this.value)'>
+                    <p class="error" id="tg_format">Неверный формат никнейма</p>
                 </form>
                 <form>
-                    <input class="data_windows_anketa" type="tel" name="tel" placeholder="Телефон">
+                    <input class="data_windows_anketa" type="tel" name="tel" id="tel" placeholder="Телефон" onchange="perenosTel(this.value)">
+                    <p class="error" id="tel_format">Неверный формат номера</p>
                 </form>
                 <div>
                     <form>
-                        <textarea class="about_myself_block" name="textarea" id="textarea" cols="15" rows="5" placeholder="О себе"></textarea>
+                        <textarea class="about_myself_block" name="textarea" id="textarea" cols="15" rows="5" placeholder="О себе" onchange="aboutMyself(value)"></textarea>
                     </form>
                     <p class="example">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хороры и смотреть аниме. Открыт к общению и взаимопомощи :)</p>
                 </div> 
@@ -66,22 +67,26 @@
                 <p class="in_the_future_text">Так будет выглядеть твоя будущая страница</p>
                 <div class="future_anketa_big">
                     <div class="place_for_photo_and_batton_show_contacts">
-                        <div class="place_for_photo"></div>
+                        <img class="place_for_photo" id="fotochka">
                         <form>
-                            <button class="show_contacts">Показать контакты</button>
+                            <button class="show_contacts" onclick="contacts()" type=button>Показать контакты</button>
+                            <p id="telegram"></p>
+                            <p id="number"></p>
                         </form>
                     </div>
                     <div  class="future_anketa_right">
-                        <p class="name_surname_in_future_anketa">Имя Фамилия</p>
+                        <p class="name_surname_in_future_anketa" id="perenos_imeni">Имя Фамилия</p>
                         <div class="gender_age_grey_block_in_future_anketa">
-                            <p>пол</p>
-                            <p>возраст</p>
+                            <p class="small" id="gender"></p>
+                            <div class="point"></div>
+                            <p class="small" id="age"></p>
+                            <div class="point"></div>
                             <p class="small_grey_block_in_future"></p>
                         </div>
                         <p class="medium_grey_block_in_future"></p>
                         <div class="turn_about_myself_in_future">
-                            <p class="about_myself_in_future">О себе</p>
-                            <button class="turn">Развернуть</button>
+                            <p class="about_myself_in_future" id="perenos_about">О себе</p>
+                            <button class="turn" id="turn" type=button onclick="turn()">Развернуть</button>
                         </div>
                         <p class="big_grey_block_in_future">
                         <!-- тут нужно прописать маленькие серые прямоугольники внутри большого -->
@@ -104,7 +109,7 @@
                 </div>
             </div>
         </div>
-       
+       <script src="./js/script1.js"></script>
     </main>
     <footer class="footer">
         <div class="email_and_support">
