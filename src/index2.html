@@ -33,49 +33,49 @@
                     <input type="radio" id="work" name="work" value="worker"> 
                     <label for="work" class="variant">Сотрудник</label>
                 </div>
-                <div class="kurs_and_block_slider"> 
-                    <label for="range" class="label-range">Курс</label> 
-                    <input class="block_for_slider" id="range" type="range" name="range" min="1" max="5" step="1"> 
-                </div>
+                <form class="range-slider">
+                    <label for="range" class="label-range">Курс</label>
+                    <input class="slider" id="range" type="range" name="range" min="1" max="6" step="1" value="1" onchange="$('#sizevalue').text($('#range').val());" onclick='eventRange()'>
+                </form>
                 <div>
                     <form>
-                        <input class="end_or_no" type="checkbox" name="end" id="end"> 
+                        <input class="end_or_no" type="checkbox" name="end" id="end" onchange='perenosEnd()'> 
                         <label for="end" class="check">Уже закончил Вышку</label>
                     </form>
                 </div>
-                <div class="stage_of_education">
+                <div class="dropdown">
                     <p class="gray_text">Ступень образования</p>
-                    <div class="conteiner_for_stages">
-                       <div class="stage_of_education_text">Ступень образования</div>
-                        <select class="spisok_stage_of_education">
-                            <option></option>
-                            <option value="bac">Бакалавриат</option>
-                            <option value="mag">Магистратура</option>
-                        </select> 
-                    </div>   
-                </div>
-                <div class="facult">
+                    <p onclick="stepEducation()" class="dropbtn" id="step">Ступень образования</p>
+                      <div id="myDropdown" class="dropdown-content">
+                        <p class="v1">Бакалавриат</p>
+                        <p class="v1">Магистратура</p>
+                        <p class="v1">Аспирантура</p>
+                      </div>
+                    </div>
+                <div class="dropdown2">
                     <p class="gray_text">Факультет</p>
-                    <div class="conteiner_for_facult">
-                       <div class="facult_text">Факультет</div>
-                        <select class="spisok_facult">
-                            <option></option>
-                            <option value="miem">Московский институт электроники и математики им. А.Н. Тихонова</option>
-                        </select> 
-                    </div>   
+                    <p onclick="faculty()" class="dropbtn2" id="fac">Факультет</p>
+                        <div id="myDropdown2" id="dropdown-content2" class="dropdown-content2">
+                            <p class="v2">Московский институт электроники и математики</p>
+                            <p class="v2">Высшая школа бизнеса</p>
+                            <p class="v2">Факультет компьютерных наук</p>
+                            <p class="v2">Факультет экономических наук</p>
+                            <p class="v2">Высшая школа дизайна</p>
+                        </div>
                 </div>
-                <div class="program">
+                <div class="dropdown3">
                     <p class="gray_text">Образовательная программа</p>
-                    <div class="conteiner_for_stages">
-                        <div class="stage_of_education_text">Образовательная программа</div>
-                         <select class="spisok_stage_of_education">
-                             <option></option>
-                             <option value="ivt">Информаитика и вычислительная техника</option>
-                         </select> 
-                     </div>     
+                    <p onclick="program()" class="dropbtn3" id="step3">Образовательная программа</p>
+                      <div id="myDropdown3" id="dropdown-content3" class="dropdown-content3">
+                        <p class="v3">Информатика и вычислительная техника</p>
+                        <p class="v3">Информационная безопасность</p>
+                        <p class="v3">Компьютерная безопасность</p>
+                        <p class="v3">Прикладная математика</p>
+                        <p class="v3">Инфокоммуникационные технологии и системы связи</p>
+                    </div>
                 </div>
                 <form>
-                    <input class="data_windows_anketa" name="name" id="name" type="text" placeholder="Работа"> 
+                    <input class="data_windows_anketa" name="name" id="name" type="text" placeholder="Работа"  onchange='perenosWork(this.value)'> 
                 </form>
             </div>
             <div class="right">
@@ -92,10 +92,15 @@
                         <div class="gender_age_grey_block_in_future_anketa">
                             <p>пол</p>
                             <p>возраст</p>
-                            <p>образование</p>
+                            <div class="education">
+                                <p class="ed" id="education1"></p>
+                                <p class="ed" id="education2"></p>
+                                <p class="ed" id="education3"></p>
+                                <p class="ed" id="education4"></p>
+                            </div>
                             <p class="small_grey_block_in_future"></p>
                         </div>
-                        <p class="medium_grey_block_in_future"></p>
+                        <p class="medium_grey_block_in_future" id="work"></p>
                         <div class="turn_about_myself_in_future">
                             <p class="about_myself_in_future">О себе</p>
                             <button class="turn">Развернуть</button>
@@ -120,6 +125,7 @@
                 </div>
             </div>
         </div>
+        <script src="./js/script2.js"></script>
     </main>
     <footer class="footer">
         <div class="email_and_support">
